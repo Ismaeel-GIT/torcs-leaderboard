@@ -36,10 +36,10 @@
 
         .row {
             display: grid;
-            /* NEW PERFECTLY MEASURED COLUMNS: 
-               [Rank] [Team] [Uni] [Badges] [Time] [LapVid] [TeamVid] */
+            /* PERFECTLY MEASURED COLUMNS: [Rank] [Team] [Uni] [Badges] [Time] [LapVid] [TeamVid] */
             grid-template-columns: 9.5% 15.5% 12.5% 15% 9.5% 18% 20%;
             height: 100%;
+            min-height: 0; /* Prevents large images from breaking the grid height */
         }
 
         .cell {
@@ -55,8 +55,10 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
+        /* THIS FIXES THE GIANT IMAGE ISSUE */
         .badge-icon {
-            height: 45%; 
+            height: 1.8vw; /* Locks height to scale with the screen */
+            width: auto;   /* Prevents stretching */
             margin: 0 4px; 
         }
 
@@ -88,17 +90,10 @@
                 <div class="cell"></div>
                 <div class="cell">Team 1</div>
                 <div class="cell">University 1</div>
-                
-                <!-- If you just want text for badges, use this: -->
                 <div class="cell">5</div> 
-                
-                <!-- If you want icons like in your target image, replace the line above with this (and upload the icons to github): 
-                <div class="cell"><img src="icon-speed.png" class="badge-icon"></div>
-                -->
-
                 <div class="cell">1:28:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="YOUR_TEAM_VIDEO_LINK_HERE" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 2 -->
@@ -106,7 +101,7 @@
                 <div class="cell"></div>
                 <div class="cell">Team 2</div>
                 <div class="cell">University 2</div>
-                <div class="cell"></div> <!-- Empty badge area -->
+                <div class="cell"></div> 
                 <div class="cell">1:35:234</div>
                 <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
                 <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
@@ -123,12 +118,15 @@
                 <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
             </div>
 
-            <!-- ROW 4 -->
+            <!-- ROW 4 (EXAMPLE WITH BADGE) -->
             <div class="row">
                 <div class="cell"></div>
                 <div class="cell">Team 4</div>
                 <div class="cell">University 4</div>
+                
+                <!-- Put your image filename here instead of your-image-name.png -->
                 <div class="cell"><img src="badge.png" class="badge-icon"></div>
+                
                 <div class="cell">1:45:234</div>
                 <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
                 <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
@@ -139,17 +137,66 @@
                 <div class="cell"></div>
                 <div class="cell">Team 5</div>
                 <div class="cell">University 5</div>
-                <div class="cell">Icons Here</div>
+                <div class="cell"></div>
                 <div class="cell">1:50:234</div>
-                <div class="vid-cell"><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
             </div>
 
-            <div class="row"><div class="cell"></div><div class="cell">Team 6</div><div class="cell">University 6</div><div class="cell"></div><div class="cell">1:55:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 7</div><div class="cell">University 7</div><div class="cell"></div><div class="cell">2:28:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 8</div><div class="cell">University 8</div><div class="cell"></div><div class="cell">2:30:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 9</div><div class="cell">University 9</div><div class="cell"></div><div class="cell">2:35:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 10</div><div class="cell">University 10</div><div class="cell"></div><div class="cell">2:40:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
+            <!-- ROW 6 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 6</div>
+                <div class="cell">University 6</div>
+                <div class="cell"></div>
+                <div class="cell">1:55:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
+
+            <!-- ROW 7 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 7</div>
+                <div class="cell">University 7</div>
+                <div class="cell"></div>
+                <div class="cell">2:28:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
+
+            <!-- ROW 8 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 8</div>
+                <div class="cell">University 8</div>
+                <div class="cell"></div>
+                <div class="cell">2:30:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
+
+            <!-- ROW 9 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 9</div>
+                <div class="cell">University 9</div>
+                <div class="cell"></div>
+                <div class="cell">2:35:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
+
+            <!-- ROW 10 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 10</div>
+                <div class="cell">University 10</div>
+                <div class="cell"></div>
+                <div class="cell">2:40:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
 
         </div>
     </div>
