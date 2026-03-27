@@ -6,157 +6,22 @@
     <title>TORCS UK Leaderboard</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0b1c98;
-            color: white;
+            background-color: #0b1c98; /* Matches the dark blue edges */
             margin: 0;
-            padding: 40px;
-            text-align: center;
-        }
-        .header {
-            margin-bottom: 30px;
-        }
-        .sponsor {
-            font-size: 16px;
-            color: #ffcc00;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        h1 {
-            font-size: 54px;
-            margin: 10px 0;
-            text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-        table {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: #1a36c4;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        th {
-            background-color: #ffcc00;
-            color: #0b1c98;
-            padding: 18px;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        td {
-            padding: 18px;
-            font-size: 14px;
-            font-weight: bold;
-            border-bottom: 1px solid #2a4df0;
-        }
-        .rank-1 {
-            background-color: #ffffff;
-            color: #0b1c98;
-        }
-        .rank-2 { background-color: #3b5bdb; }
-        .rank-3 { background-color: #2744c9; }
-        
-        .play-btn {
-            color: #000000;
-            text-decoration: none;
-            font-size: 20px;
-        }
-        .play-btn:hover { color: #ffcc00; }
-        .play-btn.yellow { color: #ffcc00; }
-        .play-btn.grey { color: #cccccc; }
-        .play-btn.orange { color: #ff8c00; }
-        .play-btn.dark { color: #0b1c98; }
-        
-        .badge-key {
-            max-width: 1100px;
-            margin: 20px auto;
-            background-color: #111111;
-            padding: 15px;
+            padding: 20px;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
+            justify-content: center;
+        }
+        img {
+            max-width: 100%; /* Ensures it scales nicely on smaller screens */
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="sponsor">IBM AI RACING LEAGUE</div>
-        <h1>TORCS UK Leaderboard</h1>
-    </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Team Name</th>
-                <th>University</th>
-                <th>Badges</th>
-                <th>Lap Time</th>
-                <th>Lap Video</th>
-                <th>Team Video</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="rank-1">
-                <td>1</td>
-                <td>TEAM 1</td>
-                <td>UNIVERSITY 1</td>
-                <td>⏱️</td>
-                <td>1:28:234</td>
-                <td><a href="#" class="play-btn dark">▶</a></td>
-                <td><a href="#" class="play-btn dark">▶</a></td>
-            </tr>
-            <tr class="rank-2">
-                <td>2</td>
-                <td>TEAM 2</td>
-                <td>UNIVERSITY 2</td>
-                <td></td>
-                <td>1:35:234</td>
-                <td><a href="#" class="play-btn grey">▶</a></td>
-                <td><a href="#" class="play-btn grey">▶</a></td>
-            </tr>
-            <tr class="rank-3">
-                <td>3</td>
-                <td>TEAM 3</td>
-                <td>UNIVERSITY 3</td>
-                <td></td>
-                <td>1:40:234</td>
-                <td><a href="#" class="play-btn orange">▶</a></td>
-                <td><a href="#" class="play-btn orange">▶</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>TEAM 4</td>
-                <td>UNIVERSITY 4</td>
-                <td>🎯 🏃</td>
-                <td>1:45:234</td>
-                <td><a href="#" class="play-btn">▶</a></td>
-                <td><a href="#" class="play-btn">▶</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>TEAM 5</td>
-                <td>UNIVERSITY 5</td>
-                <td>✂️</td>
-                <td>1:50:234</td>
-                <td><a href="#" class="play-btn">▶</a></td>
-                <td><a href="#" class="play-btn">▶</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="badge-key">
-        <span>BADGE KEY:</span>
-        <span>⏱️ = FASTEST LAP</span>
-        <span>✂️ = CUT THE MOST CORNERS</span>
-        <span>🎯 = MOST NEAR MISSES</span>
-        <span>🏃 = FASTEST SPEED</span>
-    </div>
+    <img src="leaderboard.png" alt="TORCS UK Leaderboard">
 
 </body>
 </html>
