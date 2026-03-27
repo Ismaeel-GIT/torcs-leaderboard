@@ -5,79 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TORCS UK Leaderboard</title>
     <style>
-        /* Reset margins */
         body, html {
             margin: 0;
             padding: 0;
-            background-color: #0b1a8f; /* Match the dark blue background */
+            background-color: #0b1a8f;
             font-family: Arial, sans-serif;
             color: white;
         }
 
-        /* This container maintains the 16:9 aspect ratio of your image */
         .leaderboard-container {
             position: relative;
             width: 100%;
-            max-width: 1920px; /* Max width of your image */
+            max-width: 1920px;
             margin: 0 auto;
-            aspect-ratio: 16 / 9; /* Keeps the box proportional */
+            aspect-ratio: 16 / 9;
             background-image: url('blank-board.png');
             background-size: cover;
             background-position: center;
         }
 
-        /* This is the invisible overlay that holds your data */
         .data-overlay {
             position: absolute;
-            /* YOU MAY NEED TO TWEAK THESE PERCENTAGES slightly 
-               so the text perfectly aligns with your image's rows */
-            top: 28.5%;    /* Distance from top to the first blue row */
-            bottom: 13.5%; /* Distance from bottom to the last blue row */
-            left: 13.5%;   /* Distance from left edge to the rank column */
-            right: 9.3%;   /* Distance from right edge */
-            
+            /* Fine-tuned boundaries based on the target image */
+            top: 28.2%;    
+            bottom: 13.8%; 
+            left: 13.6%;   
+            right: 9.3%;   
             display: grid;
-            grid-template-rows: repeat(10, 1fr); /* 10 equal rows */
+            grid-template-rows: repeat(10, 1fr); 
         }
 
-        /* The layout for each row */
         .row {
             display: grid;
-            /* NEW ALIGNMENT: 
-               [Spacer] [Team] [Uni] [Badges] [Time] [LapVid] [TeamVid] */
-            grid-template-columns: 10.5% 23% 25% 11% 14.5% 8% 8%;
-            align-items: center; 
+            /* NEW COLUMN WIDTHS perfectly mapped to the yellow headers */
+            /* [Blank Rank] [Team] [Uni] [Badges] [Time] [LapVid] [TeamVid] */
+            grid-template-columns: 9.5% 21% 21% 16.5% 12% 10% 10%;
+            height: 100%;
         }
 
         .cell {
-            padding: 0 0.5vw; 
-            font-size: 1.1vw; 
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+            /* Flexbox ensures text is dead-center both vertically and horizontally */
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            
+            font-size: 1vw; /* Slightly smaller font */
+            font-weight: 500; /* Lighter bold */
+            text-transform: uppercase; /* Forces text to look like "TEAM 1" */
+            letter-spacing: 0.5px; /* Slight spacing for readability */
         }
 
-        /* Center specific columns */
-        .center-text { text-align: center; }
-
-        /* Styling for the invisible links over the play buttons */
-        .video-link {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
+        /* Styling for badge icons (if you decide to use images instead of text) */
+        .badge-icon {
+            height: 50%; /* Scales the icon to fit nicely in the row */
+            margin: 0 5px; /* Spacing if there are multiple badges */
         }
-        
-        /* Make the link area cover the whole cell to hit the play button easily */
+
         .vid-cell {
             position: relative;
             cursor: pointer;
+            display: block;
         }
-        .vid-cell a {
+
+        .video-link {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
+            text-decoration: none;
         }
-        /* Optional: add a slight hover effect to the buttons */
-        .vid-cell:hover { background-color: rgba(255,255,255,0.1); }
+        
+        .vid-cell:hover { background-color: rgba(255,255,255,0.05); }
 
     </style>
 </head>
@@ -88,45 +84,71 @@
             
             <!-- ROW 1 -->
             <div class="row">
-                <div class="cell"></div> <!-- Empty cell because Rank # is in the image -->
-                <div class="cell">Team Alpha</div>
-                <div class="cell">Oxford University</div>
-                <div class="cell center-text">5</div>
-                <div class="cell center-text">1:12.450</div>
-                <div class="cell vid-cell"><a href="LINK_TO_LAP_VIDEO" target="_blank" class="video-link"></a></div>
-                <div class="cell vid-cell"><a href="LINK_TO_TEAM_VIDEO" target="_blank" class="video-link"></a></div>
+                <div class="cell"></div>
+                <div class="cell">Team 1</div>
+                <div class="cell">University 1</div>
+                
+                <!-- If you just want text for badges, use this: -->
+                <div class="cell">5</div> 
+                
+                <!-- If you want icons like in your target image, replace the line above with this (and upload the icons to github): 
+                <div class="cell"><img src="icon-speed.png" class="badge-icon"></div>
+                -->
+
+                <div class="cell">1:28:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 2 -->
             <div class="row">
                 <div class="cell"></div>
-                <div class="cell">Beta Racers</div>
-                <div class="cell">Cambridge</div>
-                <div class="cell center-text">4</div>
-                <div class="cell center-text">1:14.200</div>
-                <div class="cell vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="cell vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="cell">Team 2</div>
+                <div class="cell">University 2</div>
+                <div class="cell"></div> <!-- Empty badge area -->
+                <div class="cell">1:35:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 3 -->
             <div class="row">
                 <div class="cell"></div>
-                <div class="cell">Gamma AI</div>
-                <div class="cell">Imperial College</div>
-                <div class="cell center-text">4</div>
-                <div class="cell center-text">1:15.800</div>
-                <div class="cell vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="cell vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="cell">Team 3</div>
+                <div class="cell">University 3</div>
+                <div class="cell"></div>
+                <div class="cell">1:40:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
             </div>
 
-            <!-- Add rows 4 through 10 below using the same format as above -->
-            <div class="row"><div class="cell"></div><div class="cell">Team 4</div><div class="cell">Uni 4</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 5</div><div class="cell">Uni 5</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 6</div><div class="cell">Uni 6</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 7</div><div class="cell">Uni 7</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 8</div><div class="cell">Uni 8</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 9</div><div class="cell">Uni 9</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
-            <div class="row"><div class="cell"></div><div class="cell">Team 10</div><div class="cell">Uni 10</div><div class="cell center-text">-</div><div class="cell center-text">-</div><div class="cell vid-cell"><a href="#"></a></div><div class="cell vid-cell"><a href="#"></a></div></div>
+            <!-- ROW 4 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 4</div>
+                <div class="cell">University 4</div>
+                <div class="cell">Icons Here</div>
+                <div class="cell">1:45:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
+
+            <!-- ROW 5 -->
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell">Team 5</div>
+                <div class="cell">University 5</div>
+                <div class="cell">Icons Here</div>
+                <div class="cell">1:50:234</div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+            </div>
+
+            <div class="row"><div class="cell"></div><div class="cell">Team 6</div><div class="cell">University 6</div><div class="cell"></div><div class="cell">1:55:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
+            <div class="row"><div class="cell"></div><div class="cell">Team 7</div><div class="cell">University 7</div><div class="cell"></div><div class="cell">2:28:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
+            <div class="row"><div class="cell"></div><div class="cell">Team 8</div><div class="cell">University 8</div><div class="cell"></div><div class="cell">2:30:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
+            <div class="row"><div class="cell"></div><div class="cell">Team 9</div><div class="cell">University 9</div><div class="cell"></div><div class="cell">2:35:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
+            <div class="row"><div class="cell"></div><div class="cell">Team 10</div><div class="cell">University 10</div><div class="cell"></div><div class="cell">2:40:234</div><div class="vid-cell"><a href="#"></a></div><div class="vid-cell"><a href="#"></a></div></div>
 
         </div>
     </div>
