@@ -53,12 +53,14 @@
             text-align: center;
         }
 
-        /* FAILSAFE: This absolutely prevents any image from breaking your layout */
+        /* MAGNIFYING GLASS FIX FOR THE TINY BADGE */
         .cell img {
-            max-height: 3vw !important; 
+            max-height: 2vw !important; 
             width: auto !important;   
             margin: 0 4px; 
             object-fit: contain;
+            /* This zooms the image to 200% size. Change to 2.5 or 3 if you need it even bigger! */
+            transform: scale(2.2); 
         }
 
         .vid-cell {
@@ -84,7 +86,7 @@
     <div class="leaderboard-container">
         <div class="data-overlay">
             
-            <!-- ROW 1 (WITH BADGE AND YOUTUBE LINKS) -->
+            <!-- ROW 1 -->
             <div class="row">
                 <div class="cell"></div>
                 <div class="cell">Team 1</div>
@@ -102,8 +104,8 @@
                 <div class="cell">University 2</div>
                 <div class="cell"></div> 
                 <div class="cell">1:35:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 3 -->
@@ -113,8 +115,8 @@
                 <div class="cell">University 3</div>
                 <div class="cell"></div>
                 <div class="cell">1:40:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 4 -->
@@ -124,8 +126,8 @@
                 <div class="cell">University 4</div>
                 <div class="cell"></div>
                 <div class="cell">1:45:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 5 -->
@@ -135,8 +137,8 @@
                 <div class="cell">University 5</div>
                 <div class="cell"></div>
                 <div class="cell">1:50:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 6 -->
@@ -146,8 +148,8 @@
                 <div class="cell">University 6</div>
                 <div class="cell"></div>
                 <div class="cell">1:55:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 7 -->
@@ -157,8 +159,8 @@
                 <div class="cell">University 7</div>
                 <div class="cell"></div>
                 <div class="cell">2:28:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 8 -->
@@ -168,8 +170,8 @@
                 <div class="cell">University 8</div>
                 <div class="cell"></div>
                 <div class="cell">2:30:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 9 -->
@@ -179,8 +181,8 @@
                 <div class="cell">University 9</div>
                 <div class="cell"></div>
                 <div class="cell">2:35:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
             <!-- ROW 10 -->
@@ -190,8 +192,8 @@
                 <div class="cell">University 10</div>
                 <div class="cell"></div>
                 <div class="cell">2:40:234</div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
-                <div class="vid-cell"><a href="#" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
+                <div class="vid-cell"><a href="https://www.youtube.com/" target="_blank" class="video-link"></a></div>
             </div>
 
         </div>
